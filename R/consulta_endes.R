@@ -49,7 +49,7 @@ consulta_endes <- function(periodo, codigo_modulo, base, guardar = FALSE, ruta =
     endes <- haven::read_sav(
       utils::unzip(
         temp, 
-        files = archivos$Name[grepl(".sav",archivos$Name)], 
+        files = archivos$Name[grepl(".sav|.SAV",archivos$Name)], 
         exdir = tempdir
         ), 
       encoding = codificacion
