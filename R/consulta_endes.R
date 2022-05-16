@@ -58,7 +58,6 @@ consulta_endes <- function(periodo, codigo_modulo, base, guardar = FALSE, ruta =
     colnames(endes) <- nombres
     endes
   }
-  }
 }
 
 
