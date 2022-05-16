@@ -46,12 +46,18 @@ consulta_endes <- function(periodo, codigo_modulo, base, guardar = FALSE, ruta =
     print(paste("Archivos descargados en: ", getwd(), "/", ruta, sep = ""))
   } 
   else {
-    endes <- haven::read_sav(utils::unzip(temp, files = archivos$Name, 
-                                          exdir = tempdir), 
-                             encoding = codificacion)
+    endes <- haven::read_sav(
+      utils::unzip(
+        temp, 
+        files = archivos$Name[grepl(".sav",archivos$Name)], 
+        exdir = tempdir
+        ), 
+      encoding = codificacion
+      )
     nombres <- toupper(colnames(endes))
     colnames(endes) <- nombres
     endes
+  }
   }
 }
 
